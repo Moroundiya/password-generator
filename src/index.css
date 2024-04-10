@@ -87,6 +87,10 @@ progress::-moz-progress-bar {
     background-color: green;
 }
 
+.good::-webkit-meter-optimum-value {
+    background-color: blue;
+}
+
 
 .poor {
     text-transform: capitalize;
@@ -103,5 +107,11 @@ progress::-moz-progress-bar {
 .strong {
     text-transform: capitalize;
     color: green;
+    font-weight: bold;
+}
+
+.good {
+    text-transform: capitalize;
+    color: blue;
     font-weight: bold;
 }

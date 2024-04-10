@@ -36,10 +36,12 @@ function App() {
 
   function generate() {
 
-    if ((strength === 1) || strength === 2) {
+    if (strength === 1) {
       setcolorId('poor')
-    } else if (strength === 3) {
+    } else if (strength === 2) {
       setcolorId('fair')
+    } else if (strength === 3) {
+      setcolorId('good')
     } else if (strength === 4) {
       setcolorId('strong')
     }
