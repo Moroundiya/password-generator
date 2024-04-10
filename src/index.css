@@ -80,7 +80,7 @@ progress::-moz-progress-bar {
 
 
 .fair::-webkit-meter-optimum-value {
-    background-color: yellow;
+    background-color: orange;
 }
 
 .strong::-webkit-meter-optimum-value {
@@ -101,7 +101,7 @@ progress::-moz-progress-bar {
 .fair {
     text-transform: capitalize;
     font-weight: bold;
-    color: yellow;
+    color: orange;
 }
 
 .strong {
