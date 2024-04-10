@@ -51,3 +51,57 @@ input[type="range"]::-moz-range-thumb {
 input[type="checkbox"] {
     accent-color: #319795;
 }
+
+progress {
+    background: #eee;
+    box-shadow: 0 2px 3px rgb(0 0 0 / 20%) inset;
+    border-radius: 10px;
+}
+
+progress::-webkit-meter-value {
+    background: yellow;
+}
+
+
+
+progress::-webkit-progress-value {
+    background: green;
+}
+
+progress::-moz-progress-bar {
+    background: #fff;
+    box-shadow: 0 2px 3px rgb(0 0 0 / 20%) inset;
+    border-radius: 10px;
+}
+
+.poor::-webkit-meter-optimum-value {
+    background-color: red;
+}
+
+
+.fair::-webkit-meter-optimum-value {
+    background-color: yellow;
+}
+
+.strong::-webkit-meter-optimum-value {
+    background-color: green;
+}
+
+
+.poor {
+    text-transform: capitalize;
+    color: red;
+    font-weight: bold;
+}
+
+.fair {
+    text-transform: capitalize;
+    font-weight: bold;
+    color: yellow;
+}
+
+.strong {
+    text-transform: capitalize;
+    color: green;
+    font-weight: bold;
+}

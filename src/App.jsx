@@ -11,6 +11,8 @@ function App() {
   const [upperCheck, setupperCheck] = useState(false);
   const [numCheck, setnumCheck] = useState(false);
   const [symbCheck, setsymbCheck] = useState(false);
+  const [strength, setstrength] = useState()
+  const [colorId, setcolorId] = useState()
   // const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
   // const lowercase = 'abcdefghijklmnopqrstuvwxyz'
   // const numbers = '0123456789'
@@ -33,6 +35,14 @@ function App() {
 
 
   function generate() {
+
+    if ((strength === 1) || strength === 2) {
+      setcolorId('poor')
+    } else if (strength === 3) {
+      setcolorId('fair')
+    } else if (strength === 4) {
+      setcolorId('strong')
+    }
 
     let randomNumber;
     let randomPicks;
@@ -57,6 +67,17 @@ function App() {
 
   }
 
+  const listValue = [lowerCheck, upperCheck, numCheck, symbCheck];
+
+  let countValue = listValue.filter(function (value) {
+    return value === true;
+  }).length
+
+  useEffect(() => {
+    setstrength(countValue)
+    console.log(strength)
+  }, [countValue])
+
 
   return (
     <div className='w-full h-full bg-[#319795] flex flex-col items-center justify-center p-3'>
@@ -73,7 +94,10 @@ function App() {
             </div>
           </CopyToClipboard>
         </div>
-        <p className='text-red-600 text-sm mt-3 text-left'>Weak</p>
+        <p className='text-red-600 text-sm mt-3 text-left'>
+          <span className={colorId}>{colorId}</span>
+          <meter className={`${colorId} h-[16px] block -mt-1`} min={0} max={4} value={strength} id='meter'></meter>
+        </p>
         <button className='bg-[#319795] w-[200px] p-1 rounded text-white mx-auto mt-3 mb-2' onClick={generate}>Generate Password</button>
         <p className='mt-3 text-left'> Password Length:
           <span> {valueIn}</span>
@@ -101,7 +125,7 @@ function App() {
         </div>
       </div>
       <p className='mt-5 text-white'>Designed By Moroundiya 😎</p>
-    </div>
+    </div >
   )
 }
 
